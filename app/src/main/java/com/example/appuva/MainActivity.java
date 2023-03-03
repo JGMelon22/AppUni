@@ -1,9 +1,5 @@
 package com.example.appuva;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.graphics.Bitmap;
 import android.os.Bundle;
@@ -15,6 +11,9 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -38,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         webView.loadUrl("https://portalaluno.uva.br/LoginMobile");
         webView.getSettings().setJavaScriptEnabled(true);
 
+
         // Durante o carregamento da página, a progressbar é vista para dar um feedback de loading
         webView.setWebViewClient(new WebViewClient() {
 
@@ -51,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onPageFinished(WebView view, String url) {
                 super.onPageFinished(view, url);
+                pseudoDarkTheme(view);
                 removeElement(view);
                 progressBar.setVisibility(View.INVISIBLE);
             }
@@ -75,8 +76,20 @@ public class MainActivity extends AppCompatActivity {
         return super.onKeyDown(keyCode, event);
     }
 
-    // Remove o link para o Canvas, visto que no navegador mobile fica ruim de usar
+    // Remove o link para o Canvas, visto que no navegador mobile fica ruim de usar e uma div em branco
     public static void removeElement(@NonNull WebView webView) {
         webView.loadUrl("javascript:(function() { document.querySelector('[title=\"Plataforma Virtual - CANVAS\"]').style.display='none';})()");
+        webView.loadUrl("javascript:(function() { document.getElementById(\"notificacao_prioritarias_div\").style.display='none';})()");
+    }
+
+    // Aplicando um pseudo tema escuro na tela principal do portal do aluno
+    public static void pseudoDarkTheme(@NonNull WebView webView) {
+        webView.loadUrl("javascript:(function() { document.querySelector('[class=\"container-menu-central\"]').style.backgroundColor = \"#0f3d56\";})()");
+        webView.loadUrl("javascript:(function() { document.body.style.backgroundColor = \"#0f3d56\";})()");
+        webView.loadUrl("javascript:(function() {document.querySelector('[class=\"modal-body d-flex justify-content-start\"]').style.backgroundColor = \"#b3b3cc\";})()");
+        webView.loadUrl("javascript:(function() {document.querySelector('[class=\"row d-flex justify-content-start text-wrap\"]').style.backgroundColor = \"#b3b3cc\";})()");
+        webView.loadUrl("javascript:(function() { document.getElementById(\"image-logo\").src=\"/image/Logo-uva-footer.svg\";})()");
+        webView.loadUrl("javascript:(function() { document.getElementById(\"menu-area2\").style.backgroundColor = \"#ebc831\";})()");
+        webView.loadUrl("javascript:(function() { document.getElementById(\"styleMenuFerramentas\").style.backgroundColor = \"#ebc831\";})()");
     }
 }
