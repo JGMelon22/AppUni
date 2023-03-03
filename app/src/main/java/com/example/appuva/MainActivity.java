@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
             public void onPageFinished(WebView view, String url) {
                 super.onPageFinished(view, url);
                 pseudoDarkTheme(view);
+                beautyTools(view);
                 removeElement(view);
                 progressBar.setVisibility(View.INVISIBLE);
             }
@@ -91,5 +92,13 @@ public class MainActivity extends AppCompatActivity {
         webView.loadUrl("javascript:(function() { document.getElementById(\"image-logo\").src=\"/image/Logo-uva-footer.svg\";})()");
         webView.loadUrl("javascript:(function() { document.getElementById(\"menu-area2\").style.backgroundColor = \"#ebc831\";})()");
         webView.loadUrl("javascript:(function() { document.getElementById(\"styleMenuFerramentas\").style.backgroundColor = \"#ebc831\";})()");
+    }
+
+    // Estética para mover o banner p/ o canto inferior
+    public static void beautyTools(@NonNull WebView webView) {
+        webView.loadUrl("javascript:(function() {document.querySelector('[class=\"container-fluid footer-central-page\"]').style.position=\"absolute\";})()");
+        webView.loadUrl("javascript:(function() {document.querySelector('[class=\"container-fluid footer-central-page\"]').style.bottom=\"0\";})()");
+        webView.loadUrl("javascript:(function() {document.querySelector('[class=\"image-footer\"]').style.position=\"absolute\";})()");
+        webView.loadUrl("javascript:(function() {document.querySelector('[class=\"image-footer\"]').style.bottom=\"0\";})()");
     }
 }
