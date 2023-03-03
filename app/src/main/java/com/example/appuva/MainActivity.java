@@ -60,7 +60,8 @@ public class MainActivity extends AppCompatActivity {
             // Caso o usuário esteja offline, indica que é preciso ter uma conexão de internet ativa
             @Override
             public void onReceivedError(WebView view, WebResourceRequest request, WebResourceError error) {
-                webView.loadUrl("about:blank");
+                // webView.loadUrl("about:blank");
+                webView.loadUrl("file:///android_asset/errorView.html");
                 Toast.makeText(MainActivity.this, "Error de conexão. É necessário estar conectado a internet para usar este aplicativo!", Toast.LENGTH_SHORT).show();
             }
         });
