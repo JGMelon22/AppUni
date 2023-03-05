@@ -89,8 +89,8 @@ public class MainActivity extends AppCompatActivity {
 
     // Remove o link para o Canvas, visto que no navegador mobile fica ruim de usar e uma div em branco
     public static void removeElement(@NonNull WebView webView) {
-        webView.loadUrl("javascript:(function() { document.querySelector('[title=\"Plataforma Virtual - CANVAS\"]').style.display='none';})()");
         webView.loadUrl("javascript:(function() { document.getElementById(\"notificacao_prioritarias_div\").style.display='none';})()");
+        webView.loadUrl("javascript:(function() { document.querySelector('div.col-sm-1:nth-child(2)').remove(); })()");
     }
 
     // Aplicando um pseudo tema escuro na tela principal do portal do aluno
