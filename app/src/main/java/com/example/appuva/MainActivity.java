@@ -1,5 +1,6 @@
 package com.example.appuva;
 
+import android.accessibilityservice.GestureDescription;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -8,6 +9,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.webkit.WebResourceError;
 import android.webkit.WebResourceRequest;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
@@ -15,6 +17,8 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.io.File;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -35,6 +39,10 @@ public class MainActivity extends AppCompatActivity {
 
         // Abre a página e extende para que se mantenha na WebView
         WebView webView = findViewById(R.id.webview);
+
+        // Habilita cache da página para melhor performance
+        webView.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
+
         webView.loadUrl("https://portalaluno.uva.br/LoginMobile");
         webView.getSettings().setJavaScriptEnabled(true);
 
