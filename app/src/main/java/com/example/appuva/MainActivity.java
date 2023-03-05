@@ -1,6 +1,7 @@
 package com.example.appuva;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -87,9 +88,8 @@ public class MainActivity extends AppCompatActivity {
     // Aplicando um pseudo tema escuro na tela principal do portal do aluno
     public static void pseudoDarkTheme(@NonNull WebView webView) {
         webView.loadUrl("javascript:(function() { document.querySelector('[class=\"container-menu-central\"]').style.backgroundColor = \"#0f3d56\";})()");
-        webView.loadUrl("javascript:(function() { document.body.style.backgroundColor = \"#0f3d56\";})()");
-        webView.loadUrl("javascript:(function() {document.querySelector('[class=\"modal-body d-flex justify-content-start\"]').style.backgroundColor = \"#b3b3cc\";})()");
-        webView.loadUrl("javascript:(function() {document.querySelector('[class=\"row d-flex justify-content-start text-wrap\"]').style.backgroundColor = \"#b3b3cc\";})()");
+        webView.loadUrl("javascript:(function() { document.body.style.backgroundColor = \"#004b78\";})()");
+        webView.loadUrl("javascript:(function() {document.querySelector('[class=\"modal-body d-flex justify-content-start\"]').style.backgroundColor = \"#8297b5\";})()");
         webView.loadUrl("javascript:(function() { document.getElementById(\"image-logo\").src=\"/image/Logo-uva-footer.svg\";})()");
         webView.loadUrl("javascript:(function() { document.getElementById(\"menu-area2\").style.backgroundColor = \"#ebc831\";})()");
         webView.loadUrl("javascript:(function() { document.getElementById(\"styleMenuFerramentas\").style.backgroundColor = \"#ebc831\";})()");
