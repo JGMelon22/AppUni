@@ -12,6 +12,9 @@ uma vez que seu acesso pelo navegador mobile é bastante limitado.
 </br>
 </br>
 
-<img src="https://user-images.githubusercontent.com/73988556/221233086-2bc47b9f-4426-405a-aec9-ea6b60a84fb6.jpeg" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
-
-<img src="https://user-images.githubusercontent.com/73988556/221233051-5379610f-4311-4504-823a-363fb2ebd831.jpeg" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
+<p float="left">
+  <img src="https://user-images.githubusercontent.com/73988556/221233086-2bc47b9f-4426-405a-aec9-ea6b60a84fb6.jpeg" width="200" height="400"/> <span>&nbsp;</span>
+  <img src="https://user-images.githubusercontent.com/73988556/223110528-28a72574-4c36-416e-8bb2-bf53478297ef.jpeg" width="200" height="400"/>  <span>&nbsp;</span>
+  <img src="https://user-images.githubusercontent.com/73988556/223110532-3f63429f-3c2a-4a7c-a270-ef0f920adcf5.jpeg" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400"/> <span>&nbsp;</span>
+  <img src="https://user-images.githubusercontent.com/73988556/223109864-0dd1bd4a-f028-40f9-8f99-e31ebcb255f2.jpeg" width="200" height="400"/>
+</p>
