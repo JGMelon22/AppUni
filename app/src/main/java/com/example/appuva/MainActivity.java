@@ -59,10 +59,19 @@ public class MainActivity extends AppCompatActivity {
             // E após carregar, ela é escondida
             @Override
             public void onPageFinished(WebView view, String url) {
-                super.onPageFinished(view, url);
-                pseudoDarkTheme(view);
-                beautyTools(view);
-                removeElement(view);
+
+                // Classe com injeção do JS para estética usando Thread do Java
+                JavaScriptInjection javaScriptInjection = new JavaScriptInjection();
+
+                javaScriptInjection.start();
+
+                JavaScriptInjection.pseudoDarkTheme(view);
+                JavaScriptInjection.beautyTools(view);
+                JavaScriptInjection.removeElement(view);
+
+                // pseudoDarkTheme(view);
+                // beautyTools(view);
+                // removeElement(view);
                 progressBar.setVisibility(View.INVISIBLE);
             }
 
@@ -85,29 +94,5 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onKeyDown(keyCode, event);
-    }
-
-    // Remove o link para o Canvas, visto que no navegador mobile fica ruim de usar e uma div em branco
-    public static void removeElement(@NonNull WebView webView) {
-        webView.loadUrl("javascript:(function() { document.getElementById(\"notificacao_prioritarias_div\").style.display='none';})()");
-        webView.loadUrl("javascript:(function() { document.querySelector('div.col-sm-1:nth-child(2)').remove(); })()");
-    }
-
-    // Aplicando um pseudo tema escuro na tela principal do portal do aluno
-    public static void pseudoDarkTheme(@NonNull WebView webView) {
-        webView.loadUrl("javascript:(function() { document.querySelector('[class=\"container-menu-central\"]').style.backgroundColor = \"#0f3d56\";})()");
-        webView.loadUrl("javascript:(function() { document.body.style.backgroundColor = \"#004b78\";})()");
-        webView.loadUrl("javascript:(function() {document.querySelector('[class=\"modal-body d-flex justify-content-start\"]').style.backgroundColor = \"#8297b5\";})()");
-        webView.loadUrl("javascript:(function() { document.getElementById(\"image-logo\").src=\"/image/Logo-uva-footer.svg\";})()");
-        webView.loadUrl("javascript:(function() { document.getElementById(\"menu-area2\").style.backgroundColor = \"#ebc831\";})()");
-        webView.loadUrl("javascript:(function() { document.getElementById(\"styleMenuFerramentas\").style.backgroundColor = \"#ebc831\";})()");
-    }
-
-    // Estética para mover o banner p/ o canto inferior
-    public static void beautyTools(@NonNull WebView webView) {
-        webView.loadUrl("javascript:(function() {document.querySelector('[class=\"container-fluid footer-central-page\"]').style.position=\"absolute\";})()");
-        webView.loadUrl("javascript:(function() {document.querySelector('[class=\"container-fluid footer-central-page\"]').style.bottom=\"0\";})()");
-        webView.loadUrl("javascript:(function() {document.querySelector('[class=\"image-footer\"]').style.position=\"absolute\";})()");
-        webView.loadUrl("javascript:(function() {document.querySelector('[class=\"image-footer\"]').style.bottom=\"0\";})()");
     }
 }
