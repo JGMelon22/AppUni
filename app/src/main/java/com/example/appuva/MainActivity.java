@@ -1,10 +1,9 @@
 package com.example.appuva;
 
-import android.accessibilityservice.GestureDescription;
 import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.KeyEvent;
 import android.view.View;
 import android.webkit.WebResourceError;
@@ -15,10 +14,7 @@ import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
-import java.io.File;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -65,9 +61,9 @@ public class MainActivity extends AppCompatActivity {
 
                 javaScriptInjection.start();
 
-                JavaScriptInjection.pseudoDarkTheme(view);
-                JavaScriptInjection.beautyTools(view);
-                JavaScriptInjection.removeElement(view);
+                javaScriptInjection.pseudoDarkTheme(view);
+                javaScriptInjection.beautyTools(view);
+                javaScriptInjection.removeElement(view);
 
                 // pseudoDarkTheme(view);
                 // beautyTools(view);
