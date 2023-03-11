@@ -3,7 +3,6 @@ package com.example.appuva;
 import android.annotation.SuppressLint;
 import android.graphics.Bitmap;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.KeyEvent;
 import android.view.View;
 import android.webkit.WebResourceError;
@@ -65,9 +64,6 @@ public class MainActivity extends AppCompatActivity {
                 javaScriptInjection.beautyTools(view);
                 javaScriptInjection.removeElement(view);
 
-                // pseudoDarkTheme(view);
-                // beautyTools(view);
-                // removeElement(view);
                 progressBar.setVisibility(View.INVISIBLE);
             }
 
