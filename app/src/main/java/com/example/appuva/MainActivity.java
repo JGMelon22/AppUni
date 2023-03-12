@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // Modifica o título da top bar
-        getSupportActionBar().setTitle("Aplicativo Faculdade");
+        getSupportActionBar().setTitle("AppUni");
 
         // Mostra a progress bar enquanto a página carrega
         final ProgressBar progressBar = findViewById(R.id.progress);

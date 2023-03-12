@@ -9,16 +9,18 @@ public class JavaScriptInjection extends Thread {
     public void removeElement(@NonNull WebView webView) {
         webView.loadUrl("javascript:(function() { document.getElementById(\"notificacao_prioritarias_div\").style.display='none';})()");
         webView.loadUrl("javascript:(function() { document.querySelector('div.col-sm-1:nth-child(2)').remove(); })()");
+        webView.loadUrl("javascript:(function() {document.querySelector('[class=\"d-flex justify-content-center\"]').remove();})()");
     }
 
     // Aplicando um pseudo tema escuro na tela principal do portal do aluno
     public void pseudoDarkTheme(@NonNull WebView webView) {
-        webView.loadUrl("javascript:(function() { document.querySelector('[class=\"container-menu-central\"]').style.backgroundColor = \"#0f3d56\";})()");
-        webView.loadUrl("javascript:(function() { document.body.style.backgroundColor = \"#004b78\";})()");
+        webView.loadUrl("javascript:(function() {document.querySelector('[class=\"container-menu-central\"]').style.backgroundColor = \"#0f3d56\";})()");
+        webView.loadUrl("javascript:(function() {document.body.style.backgroundColor = \"#004b78\";})()");
         webView.loadUrl("javascript:(function() {document.querySelector('[class=\"modal-body d-flex justify-content-start\"]').style.backgroundColor = \"#8297b5\";})()");
-        webView.loadUrl("javascript:(function() { document.getElementById(\"image-logo\").src=\"/image/Logo-uva-footer.svg\";})()");
-        webView.loadUrl("javascript:(function() { document.getElementById(\"menu-area2\").style.backgroundColor = \"#ebc831\";})()");
-        webView.loadUrl("javascript:(function() { document.getElementById(\"styleMenuFerramentas\").style.backgroundColor = \"#ebc831\";})()");
+        webView.loadUrl("javascript:(function() {document.getElementById(\"image-logo\").src=\"/image/Logo-uva-footer.svg\";})()");
+        webView.loadUrl("javascript:(function() {document.getElementById(\"menu-area2\").style.backgroundColor = \"#ebc831\";})()");
+        webView.loadUrl("javascript:(function() {document.getElementById(\"styleMenuFerramentas\").style.backgroundColor = \"#ebc831\";})()");
+        webView.loadUrl("javascript:(function() {document.querySelector('[class=\"buttonCloseBg\"]').style.backgroundColor = \"#ebc831\";})()");
     }
 
     // Estética para mover o banner p/ o canto inferior
