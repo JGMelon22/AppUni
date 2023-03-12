@@ -1,4 +1,4 @@
-# Aplicativo Faculdade
+# AppUni
 Aplicativo Android visando maior comodidade de acesso ao sistema do aluno da Universidade Veiga de Almeida.
 
 <h3> Por que? </h3>
@@ -12,6 +12,14 @@ uma vez que seu acesso pelo navegador mobile é bastante limitado.
 </br>
 </br>
 
-<img src="https://user-images.githubusercontent.com/73988556/221233086-2bc47b9f-4426-405a-aec9-ea6b60a84fb6.jpeg" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
+<p float="left">
+  <img src="https://user-images.githubusercontent.com/73988556/224573405-7ffae360-38a6-48aa-8b5f-b3e9e4819473.jpeg" width="200" height="400"/> <span>&nbsp;</span>
+  <img src="https://user-images.githubusercontent.com/73988556/224573402-5420d9a9-2924-4559-9f36-1cc4273a7102.jpeg" width="200" height="400"/>  <span>&nbsp;</span>
+  <img src="https://user-images.githubusercontent.com/73988556/224573399-793dd026-9d8b-4d67-9888-e6454475ce4f.jpeg" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400"/> <span>&nbsp;</span>
+  <img src="https://user-images.githubusercontent.com/73988556/224573395-52f6c30b-49ee-44d4-a7a9-bbe752e41848.jpeg" width="200" height="400"/>
+</p>
 
-<img src="https://user-images.githubusercontent.com/73988556/221233051-5379610f-4311-4504-823a-363fb2ebd831.jpeg" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
+<h4> Colaboradores 👥</h4>
+- <a href="https://github.com/rbrmafort">Robert Mafort 💻<a/>
+</br>
+- <a href="https://www.linkedin.com/in/daianemartins14/">Daiane Machado 🎨</a>
