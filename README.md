@@ -15,7 +15,7 @@ O programa realiza um wrapper do portal do aluno web através do componente WebV
   <img src="https://user-images.githubusercontent.com/73988556/224573405-7ffae360-38a6-48aa-8b5f-b3e9e4819473.jpeg" width="200" height="400"/> <span>&nbsp;</span>
   <img src="https://user-images.githubusercontent.com/73988556/224573402-5420d9a9-2924-4559-9f36-1cc4273a7102.jpeg" width="200" height="400"/>  <span>&nbsp;</span>
   <img src="https://user-images.githubusercontent.com/73988556/224573399-793dd026-9d8b-4d67-9888-e6454475ce4f.jpeg" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400"/> <span>&nbsp;</span>
-  <img src="https://user-images.githubusercontent.com/73988556/224573395-52f6c30b-49ee-44d4-a7a9-bbe752e41848.jpeg" width="200" height="400"/>
+  <img src="https://user-images.githubusercontent.com/73988556/225703844-2f88d0f9-a35a-44d0-bd08-e6b06a013017.jpeg" width="200" height="400"/>
 </p>
 
 <h4> Colaboradores 👥</h4>
