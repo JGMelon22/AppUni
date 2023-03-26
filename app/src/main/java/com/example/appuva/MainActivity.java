@@ -72,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onReceivedError(WebView view, WebResourceRequest request, WebResourceError error) {
                 // webView.loadUrl("file:///android_asset/errorView.html");
+                webView.loadUrl("about:blank"); // Evitar de renderizar página de sem rede genérica do android
                 Intent errorIntent = new Intent(getApplicationContext(), ErrorActivity.class);
                 startActivity(errorIntent);
                 Toast.makeText(MainActivity.this, "Error de conexão. É necessário estar conectado a internet para usar este aplicativo!", Toast.LENGTH_SHORT).show();
