@@ -1,6 +1,7 @@
 package com.example.appuva;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -70,8 +71,9 @@ public class MainActivity extends AppCompatActivity {
             // Caso o usuário esteja offline, indica que é preciso ter uma conexão de internet ativa
             @Override
             public void onReceivedError(WebView view, WebResourceRequest request, WebResourceError error) {
-                // webView.loadUrl("about:blank");
-                webView.loadUrl("file:///android_asset/errorView.html");
+                webView.loadUrl("about:blank"); // Evitar de renderizar página de sem rede genérica do android
+                Intent errorIntent = new Intent(getApplicationContext(), ErrorActivity.class);
+                startActivity(errorIntent);
                 Toast.makeText(MainActivity.this, "Error de conexão. É necessário estar conectado a internet para usar este aplicativo!", Toast.LENGTH_SHORT).show();
             }
         });
