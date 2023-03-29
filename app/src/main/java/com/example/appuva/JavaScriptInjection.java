@@ -5,12 +5,31 @@ import android.webkit.WebView;
 import androidx.annotation.NonNull;
 
 public class JavaScriptInjection extends Thread {
-    // Remove o link para o Canvas, visto que no navegador mobile fica ruim de usar e uma div em branco
     public void removeElement(@NonNull WebView webView) {
-        webView.loadUrl("javascript:(function() { document.getElementById(\"notificacao_prioritarias_div\").style.display='none';})()");
-        webView.loadUrl("javascript:(function() { document.querySelector('div.col-sm-1:nth-child(2)').remove(); })()");
+        // webView.loadUrl("javascript:(function() { document.getElementById(\"notificacao_prioritarias_div\").style.display='none';})()");
+        webView.loadUrl("javascript:(function() {document.querySelector('div.col-sm-1:nth-child(2)').remove();})()");
+
+        // Remove botão de reset de senha e de logout
+        webView.loadUrl("javascript:(function() {document.querySelector('[class=\"button-link\"]').remove();})()");
+        webView.loadUrl("javascript:(function() {document.querySelector('[class=\"button-link\"]').remove();})()");
+
+        // Remove o link para o Canvas, visto que no navegador mobile fica ruim de usar e uma div em branco
         webView.loadUrl("javascript:(function() {document.querySelector('[class=\"d-flex justify-content-center\"]').remove();})()");
+        webView.loadUrl("javascript:(function() {document.querySelector('[class=\"container\"]').remove();})()");
+
+        // Desabilita o clique dos botões na div
+        webView.evaluateJavascript("const buttons = document.querySelectorAll('.button-info-center');" +
+                "for (let i = 0; i < buttons.length; i++) {" +
+                "  buttons[i].disabled = true;" +
+                "}", null);
+
     }
+
+    /*
+    * const buttons = document.querySelectorAll('.button-info-center');
+for (let i = 0; i < buttons.length; i++) {
+  buttons[i].disabled = true;
+}*/
 
     // Aplicando um pseudo tema escuro na tela principal do portal do aluno
     public void pseudoDarkTheme(@NonNull WebView webView) {
