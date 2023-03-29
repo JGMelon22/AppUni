@@ -2,7 +2,9 @@ package com.example.appuva;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.res.ColorStateList;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
