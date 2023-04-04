@@ -13,7 +13,7 @@
     <!-- indeterminateTint muda a cor da progress bar -->
     <ProgressBar
         android:id="@+id/progress"
-        android:indeterminateTint="#004B78"
+        android:indeterminateTint="#218ACA"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center" />

@@ -25,12 +25,6 @@ public class JavaScriptInjection extends Thread {
 
     }
 
-    /*
-    * const buttons = document.querySelectorAll('.button-info-center');
-for (let i = 0; i < buttons.length; i++) {
-  buttons[i].disabled = true;
-}*/
-
     // Aplicando um pseudo tema escuro na tela principal do portal do aluno
     public void pseudoDarkTheme(@NonNull WebView webView) {
         webView.loadUrl("javascript:(function() {document.querySelector('[class=\"container-menu-central\"]').style.backgroundColor = \"#0f3d56\";})()");

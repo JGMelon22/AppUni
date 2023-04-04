@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
         webView.loadUrl("https://portalaluno.uva.br/LoginMobile");
         webView.getSettings().setJavaScriptEnabled(true);
 
+        progressBar.setVisibility(View.INVISIBLE);
 
         // Durante o carregamento da página, a progressbar é vista para dar um feedback de loading
         webView.setWebViewClient(new WebViewClient() {
