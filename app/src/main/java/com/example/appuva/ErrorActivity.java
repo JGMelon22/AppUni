@@ -19,12 +19,8 @@ public class ErrorActivity extends AppCompatActivity {
             Intent mainIntent = new Intent(getApplicationContext(), MainActivity.class);
             startActivity(mainIntent);
             this.finish();
-        }
-        catch (Exception e) {
-            throw e;
-        }
 
-        finally {
+        } finally {
             this.finish();
         }
     }
