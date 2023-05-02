@@ -6,7 +6,6 @@ import androidx.annotation.NonNull;
 
 public class JavaScriptInjection extends Thread {
     public void removeElement(@NonNull WebView webView) {
-        // webView.loadUrl("javascript:(function() { document.getElementById(\"notificacao_prioritarias_div\").style.display='none';})()");
         webView.loadUrl("javascript:(function() {document.querySelector('div.col-sm-1:nth-child(2)').remove();})()");
 
         // Remove botão de reset de senha e de logout
@@ -34,6 +33,13 @@ public class JavaScriptInjection extends Thread {
         webView.loadUrl("javascript:(function() {document.getElementById(\"menu-area2\").style.backgroundColor = \"#ebc831\";})()");
         webView.loadUrl("javascript:(function() {document.getElementById(\"styleMenuFerramentas\").style.backgroundColor = \"#ebc831\";})()");
         webView.loadUrl("javascript:(function() {document.querySelector('[class=\"buttonCloseBg\"]').style.backgroundColor = \"#ebc831\";})()");
+
+        // Input de login e senha agora respeitam a cor branca, não mudando para o azul do backround
+        webView.loadUrl("javascript:(function() {document.getElementById(\"LoginEntrada_login\").style.backgroundColor = \"#ffffff\";})()");
+        webView.loadUrl("javascript:(function() {document.getElementById(\"LoginEntrada_senha\").style.backgroundColor = \"#ffffff\";})()");
+
+        // Plataforma de cobrança com fundo branco
+        webView.loadUrl("javascript:(function() {document.querySelector('[class=\"container body-content\"]').style.backgroundColor = \"#ffffff\";})()");
     }
 
     // Estética para mover o banner p/ o canto inferior
