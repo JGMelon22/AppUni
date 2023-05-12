@@ -21,7 +21,21 @@ public class JavaScriptInjection extends Thread {
                 "for (let i = 0; i < buttons.length; i++) {" +
                 "  buttons[i].disabled = true;" +
                 "}", null);
+    }
 
+    // Injeção JS para evitar página da carteira do estudante (pois carrega errado)
+    public void injectJavaScript(@NonNull WebView webView, @NonNull String script) {
+        webView.evaluateJavascript(script, null);
+    }
+
+    // Ijetando o código na WebView para avisar ao usuário da limitação do sistema
+    public void customizeWebView(@NonNull WebView webView) {
+        String script = "let element = document.querySelector('[title=\"Carteira de Estudante\"]');" +
+                "element.onclick = function() {" +
+                "  event.preventDefault();" +
+                "  window.alert(\"Funcionalidade impossibilitada no App open source :(\");" +
+                "}";
+        injectJavaScript(webView, script);
     }
 
     // Aplicando um pseudo tema escuro na tela principal do portal do aluno

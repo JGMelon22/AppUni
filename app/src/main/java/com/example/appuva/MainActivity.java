@@ -8,6 +8,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
+import android.webkit.WebChromeClient;
 import android.webkit.WebResourceError;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
@@ -36,13 +37,16 @@ public class MainActivity extends AppCompatActivity {
         progressBar.setVisibility(View.VISIBLE);
 
         // Abre a página e extende para que se mantenha na WebView
-        WebView webView = findViewById(R.id.webview);
+        webView = findViewById(R.id.webview);
 
         // Habilita cache da página para melhor performance
         webView.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
 
         webView.loadUrl("https://portalaluno.uva.br/LoginMobile");
         webView.getSettings().setJavaScriptEnabled(true);
+
+        // Usa o Chrome para deixar usar window.alert
+        webView.setWebChromeClient(new WebChromeClient());
 
         progressBar.setVisibility(View.INVISIBLE);
 
@@ -67,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
                 javaScriptInjection.pseudoDarkTheme(view);
                 javaScriptInjection.beautyTools(view);
                 javaScriptInjection.removeElement(view);
+                javaScriptInjection.customizeWebView(view);
 
                 progressBar.setVisibility(View.INVISIBLE);
             }
