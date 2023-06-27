@@ -2,9 +2,7 @@ package com.example.appuva;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.content.res.ColorStateList;
 import android.graphics.Bitmap;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
@@ -18,6 +16,8 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.appuva.services.JavaScriptInjectionService;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -64,14 +64,14 @@ public class MainActivity extends AppCompatActivity {
             public void onPageFinished(WebView view, String url) {
 
                 // Classe com injeção do JS para estética usando Thread do Java
-                JavaScriptInjection javaScriptInjection = new JavaScriptInjection();
+                JavaScriptInjectionService javaScriptInjectionService = new JavaScriptInjectionService();
 
-                javaScriptInjection.start();
+                javaScriptInjectionService.start();
 
-                javaScriptInjection.pseudoDarkTheme(view);
-                javaScriptInjection.beautyTools(view);
-                javaScriptInjection.removeElement(view);
-                javaScriptInjection.customizeWebView(view);
+                javaScriptInjectionService.pseudoDarkTheme(view);
+                javaScriptInjectionService.beautyTools(view);
+                javaScriptInjectionService.removeElement(view);
+                javaScriptInjectionService.customizeWebView(view);
 
                 progressBar.setVisibility(View.INVISIBLE);
             }

@@ -1,10 +1,10 @@
-package com.example.appuva;
+package com.example.appuva.services;
 
 import android.webkit.WebView;
 
 import androidx.annotation.NonNull;
 
-public class JavaScriptInjection extends Thread {
+public class JavaScriptInjectionService extends Thread {
     public void removeElement(@NonNull WebView webView) {
         webView.loadUrl("javascript:(function() {document.querySelector('div.col-sm-1:nth-child(2)').remove();})()");
 
