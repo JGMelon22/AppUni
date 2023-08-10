@@ -71,7 +71,6 @@ public class MainActivity extends AppCompatActivity {
                 javaScriptInjectionService.pseudoDarkTheme(view);
                 javaScriptInjectionService.beautyTools(view);
                 javaScriptInjectionService.removeElement(view);
-                javaScriptInjectionService.customizeWebView(view);
 
                 progressBar.setVisibility(View.INVISIBLE);
             }
