@@ -12,7 +12,7 @@ O programa realiza um wrapper do portal do aluno web através do componente WebV
 </br>
 
 <p float="left">
-  <img src="https://user-images.githubusercontent.com/73988556/224573405-7ffae360-38a6-48aa-8b5f-b3e9e4819473.jpeg" width="200" height="400"/> <span>&nbsp;</span>
+  <img src="https://github.com/JGMelon22/AppUni/assets/73988556/4b9d9176-60fb-4b35-af3b-714800e35563" width="200" height="400"/> <span>&nbsp;</span>
   <img src="https://github.com/JGMelon22/AppUni/assets/73988556/3572d2ff-ea8e-4ee4-a8d9-8991fcd681be" width="200" height="400"/>  <span>&nbsp;</span>
   <img src="https://github.com/JGMelon22/AppUni/assets/73988556/a807ba17-e68a-47ba-b866-bc80b112786e" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400"/> <span>&nbsp;</span>
   <img src="https://user-images.githubusercontent.com/73988556/227794320-6699be1a-aa2c-4a98-a248-1fb9e94d9efe.jpeg" width="200" height="400"/>
