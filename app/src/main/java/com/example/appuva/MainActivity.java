@@ -39,6 +39,9 @@ public class MainActivity extends AppCompatActivity {
         // Abre a página e extende para que se mantenha na WebView
         webView = findViewById(R.id.webview);
 
+        // Habilita Renderização via Hardware
+        webView.setLayerType(View.LAYER_TYPE_HARDWARE, null);
+
         // Habilita cache da página para melhor performance
         webView.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
 
