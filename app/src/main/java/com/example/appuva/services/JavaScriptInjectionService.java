@@ -54,5 +54,9 @@ public class JavaScriptInjectionService extends Thread {
         // Muda a cor do botão de login e sua fonte
         webView.loadUrl("javascript:(function() {document.querySelector('[class=\"button-type-mobile btn-style\"]').style.background = \"#ffd000\";})()");
         webView.loadUrl("javascript:(function() {document.querySelector('[class=\"button-type-mobile btn-style\"]').style.color = \"#014b78\";})()");
+
+        // Muda a cor do botão de reset de senha e sua fonte
+        webView.loadUrl("javascript:(function() {document.querySelector('[class=\"style-inputs color-btn\"]').style.background = \"#ffd000\";})()");
+        webView.loadUrl("javascript:(function() {document.querySelector('[class=\"style-inputs color-btn\"]').style.color = \"#014b78\";})()");
     }
 }
