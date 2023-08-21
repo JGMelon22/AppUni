@@ -6,13 +6,18 @@ import androidx.annotation.NonNull;
 
 public class JavaScriptInjectionService extends Thread {
     public void removeElement(@NonNull WebView webView) {
+
+        // Remove link para diversidade humana
+        webView.loadUrl("javascript:(function() {document.querySelector('div.col-sm-1:nth-child(3)').remove();})()");
+
+        // Remove o link para o Canvas, visto que no navegador mobile fica ruim de usar
         webView.loadUrl("javascript:(function() {document.querySelector('div.col-sm-1:nth-child(2)').remove();})()");
 
         // Remove botão de reset de senha e de logout
         webView.loadUrl("javascript:(function() {document.querySelector('[class=\"button-link\"]').remove();})()");
         webView.loadUrl("javascript:(function() {document.querySelector('[class=\"button-link\"]').remove();})()");
 
-        // Remove o link para o Canvas, visto que no navegador mobile fica ruim de usar e uma div em branco
+        // Remove logo da UVA no canto superior esquerdo
         webView.loadUrl("javascript:(function() {document.querySelector('[class=\"d-flex justify-content-center\"]').remove();})()");
         webView.loadUrl("javascript:(function() {document.querySelector('[class=\"container\"]').remove();})()");
 
@@ -58,5 +63,13 @@ public class JavaScriptInjectionService extends Thread {
         // Muda a cor do botão de reset de senha e sua fonte
         webView.loadUrl("javascript:(function() {document.querySelector('[class=\"style-inputs color-btn\"]').style.background = \"#ffd000\";})()");
         webView.loadUrl("javascript:(function() {document.querySelector('[class=\"style-inputs color-btn\"]').style.color = \"#014b78\";})()");
+    }
+
+    public void carterinhaAluno(@NonNull WebView webView) {
+        String avisoCarterinha = "function avisoCarterinha() { window.alert(\"Considere tirar um print da carterinha!\"); }";
+        String cliqueCarterinha = "document.getElementById(\"btn_acionar_carterinha\").addEventListener(\"click\", avisoCarterinha);";
+
+        webView.loadUrl("javascript:" + avisoCarterinha);
+        webView.loadUrl("javascript:" + cliqueCarterinha);
     }
 }
