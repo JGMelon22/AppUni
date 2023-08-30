@@ -4,7 +4,8 @@ import android.webkit.WebView;
 
 import androidx.annotation.NonNull;
 
-public class JavaScriptInjectionService extends Thread {
+public class JavaScriptInjectionService {
+
     public void removeElement(@NonNull WebView webView) {
         // Remove diversidade humana e canvas
         webView.loadUrl("javascript:(function() {document.querySelector('div.col-sm-1:nth-child(3)').remove();})()");
@@ -37,7 +38,7 @@ public class JavaScriptInjectionService extends Thread {
 
         // Input de login e senha agora respeitam a cor branca, não mudando para o azul do backround
         webView.loadUrl("javascript:(function() {document.getElementById(\"LoginEntrada_login\").style.backgroundColor = \"#ffffff\";})()");
-        webView.loadUrl("javascript:(function() {document.getElementById(\"LoginEntrada_senha\").style.backgroundColor = \"#ffffff\";})()");
+        webView.loadUrl("-javascript:(function() {document.getElementById(\"LoginEntrada_senha\").style.backgroundColor = \"#ffffff\";})()");
 
         // Input de login e data nascimento na tela de recuperação de senha com fundo branco
         webView.loadUrl("javascript:(function() { " +
@@ -69,7 +70,7 @@ public class JavaScriptInjectionService extends Thread {
         webView.loadUrl("javascript:(function() {document.querySelector('[class=\"text-muted paragraph-color\"]').style.color = \"#FFFF\";})()");
 
         // Muda a logo da tela de login
-        webView.loadUrl("javascript:(function() {document.querySelector('[class=\"header\"]').outerHTML = '<img src=\"https://scontent.fgig20-1.fna.fbcdn.net/v/t39.30808-6/313900437_10160598002586340_6583575633439665749_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=XR6F-SE8XEoAX8JGaZI&_nc_oc=AQkplt0gpH0p_ihNZDDVfzru5pJ8gq2SSseATaCDy3B1NRoce7SWYEhnNCvFmZ7JfExcChTVqdl0kMlvTZI6CW1I&_nc_ht=scontent.fgig20-1.fna&oh=00_AfA1iF6hiVoHg39zFXZq8ZM1e74XTtUt3vVhcqwGfUcUZQ&oe=64E91640\" alt=\"Image\" style=\"height: auto;\">';})()"); // Funcional
+        webView.loadUrl("javascript:(function() {document.querySelector('[class=\"header\"]').outerHTML = '<img src=\"https://scontent.fgig20-1.fna.fbcdn.net/v/t39.30808-6/313900437_10160598002586340_6583575633439665749_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=EfP4jXQoE0YAX_EaVxj&_nc_oc=AQn7NxgbfPfDnI-EknZ9TewyV645h79J9FE7c_qd_xAYilrB6XPJUf9yOHgKWZh5kr6sNHzZKr73N2diUa2Un7Wz&_nc_ht=scontent.fgig20-1.fna&oh=00_AfAV0jA2aJlHTaQRax9KDY1YbkG0jfx0oNvbwpiS6M2lQg&oe=64F2F980\" alt=\"Image\" style=\"height: auto;\">';})()"); // Funcional
 
         // Muda a cor do botão de login e sua fonte
         webView.loadUrl("javascript:(function() {document.querySelector('[class=\"button-type-mobile btn-style\"]').style.background = \"#ffd000\";})()");
@@ -78,10 +79,6 @@ public class JavaScriptInjectionService extends Thread {
         // Muda a cor do botão de reset de senha e sua fonte
         webView.loadUrl("javascript:(function() {document.querySelector('[class=\"style-inputs color-btn\"]').style.background = \"#ffd000\";})()");
         webView.loadUrl("javascript:(function() {document.querySelector('[class=\"style-inputs color-btn\"]').style.color = \"#014b78\";})()");
-    }
-
-    public void mudarLogoLogin(@NonNull WebView webView) {
-        webView.loadUrl("javascript:(function() {document.querySelector('[class=\"header\"]').outerHTML = '<img src=\"https://scontent.fgig20-1.fna.fbcdn.net/v/t39.30808-6/313900437_10160598002586340_6583575633439665749_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=XR6F-SE8XEoAX8JGaZI&_nc_oc=AQkplt0gpH0p_ihNZDDVfzru5pJ8gq2SSseATaCDy3B1NRoce7SWYEhnNCvFmZ7JfExcChTVqdl0kMlvTZI6CW1I&_nc_ht=scontent.fgig20-1.fna&oh=00_AfA1iF6hiVoHg39zFXZq8ZM1e74XTtUt3vVhcqwGfUcUZQ&oe=64E91640\" alt=\"Image\" style=\"height: auto;\">';}()");
     }
 
     public void carterinhaAluno(@NonNull WebView webView) {

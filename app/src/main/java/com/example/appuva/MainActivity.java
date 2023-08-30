@@ -58,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onPageStarted(WebView view, String url, Bitmap favicon) {
+
                 super.onPageStarted(view, url, favicon);
                 progressBar.setVisibility(View.VISIBLE);
             }
@@ -68,8 +69,6 @@ public class MainActivity extends AppCompatActivity {
 
                 // Classe com injeção do JS para estética usando Thread do Java
                 JavaScriptInjectionService javaScriptInjectionService = new JavaScriptInjectionService();
-
-                javaScriptInjectionService.start();
 
                 javaScriptInjectionService.pseudoDarkTheme(view);
                 javaScriptInjectionService.beautyTools(view);
