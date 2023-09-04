@@ -70,7 +70,7 @@ public class JavaScriptInjectionService {
         webView.loadUrl("javascript:(function() {document.querySelector('[class=\"text-muted paragraph-color\"]').style.color = \"#FFFF\";})()");
 
         // Muda a logo da tela de login
-        webView.loadUrl("javascript:(function() {document.querySelector('[class=\"header\"]').outerHTML = '<img src=\"https://scontent.fgig20-1.fna.fbcdn.net/v/t39.30808-6/313900437_10160598002586340_6583575633439665749_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=EfP4jXQoE0YAX_EaVxj&_nc_oc=AQn7NxgbfPfDnI-EknZ9TewyV645h79J9FE7c_qd_xAYilrB6XPJUf9yOHgKWZh5kr6sNHzZKr73N2diUa2Un7Wz&_nc_ht=scontent.fgig20-1.fna&oh=00_AfAV0jA2aJlHTaQRax9KDY1YbkG0jfx0oNvbwpiS6M2lQg&oe=64F2F980\" alt=\"Image\" style=\"height: auto;\">';})()"); // Funcional
+        webView.loadUrl("javascript:(function() {document.querySelector('[class=\"header\"]').outerHTML = '<img src=\"https://i.imgur.com/SzxKhmN.jpeg\" alt=\"Image\" style=\"height: auto;\">';})()"); // Funcional
 
         // Muda a cor do botão de login e sua fonte
         webView.loadUrl("javascript:(function() {document.querySelector('[class=\"button-type-mobile btn-style\"]').style.background = \"#ffd000\";})()");
