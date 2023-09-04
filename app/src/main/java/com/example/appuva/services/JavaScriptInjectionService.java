@@ -22,7 +22,7 @@ public class JavaScriptInjectionService {
         // Desabilita o clique dos botões na div
         webView.evaluateJavascript("const buttons = document.querySelectorAll('.button-info-center');" +
                 "for (let i = 0; i < buttons.length; i++) {" +
-                "  buttons[i].disabled = true;" +
+                "   buttons[i].disabled = true;" +
                 "}", null);
     }
 

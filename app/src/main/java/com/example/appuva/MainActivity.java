@@ -50,7 +50,6 @@ public class MainActivity extends AppCompatActivity {
 
         // Usa o Chrome para deixar usar window.alert
         webView.setWebChromeClient(new WebChromeClient());
-
         progressBar.setVisibility(View.INVISIBLE);
 
         // Durante o carregamento da página, a progressbar é vista para dar um feedback de loading
@@ -60,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
             public void onPageStarted(WebView view, String url, Bitmap favicon) {
 
                 super.onPageStarted(view, url, favicon);
+                view.setVisibility(View.INVISIBLE);
                 progressBar.setVisibility(View.VISIBLE);
             }
 
@@ -75,7 +75,16 @@ public class MainActivity extends AppCompatActivity {
                 javaScriptInjectionService.removeElement(view);
                 javaScriptInjectionService.carterinhaAluno(view);
 
+                // Aplica um pouco de delay para que minimize o efeito gráfico da injeção de tema via JS
+                try {
+                    Thread.sleep(100);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+
                 progressBar.setVisibility(View.INVISIBLE);
+
+                view.setVisibility(View.VISIBLE);
             }
 
             // Caso o usuário esteja offline, indica que é preciso ter uma conexão de internet ativa
