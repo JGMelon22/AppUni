@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
                 webView.loadUrl("about:blank"); // Evitar de renderizar página de sem rede genérica do android
                 Intent errorIntent = new Intent(getApplicationContext(), ErrorActivity.class);
                 startActivity(errorIntent);
-                Toast.makeText(MainActivity.this, "Error de conexão. É necessário estar conectado a internet para usar este aplicativo!", Toast.LENGTH_SHORT).show();
+                finish();
             }
         });
     }
