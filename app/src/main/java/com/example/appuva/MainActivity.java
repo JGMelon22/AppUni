@@ -1,8 +1,11 @@
 package com.example.appuva;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
@@ -84,13 +87,18 @@ public class MainActivity extends AppCompatActivity {
 
                 progressBar.setVisibility(View.INVISIBLE);
 
-                view.setVisibility(View.VISIBLE);
+                // Verifica se está conectado a internet
+                ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+                NetworkInfo activeNetwork = connectivityManager.getActiveNetworkInfo();
+                boolean isConnected = activeNetwork != null && activeNetwork.isConnectedOrConnecting();
+
+                if(isConnected)
+                    view.setVisibility(View.VISIBLE);
             }
 
             // Caso o usuário esteja offline, indica que é preciso ter uma conexão de internet ativa
             @Override
             public void onReceivedError(WebView view, WebResourceRequest request, WebResourceError error) {
-                webView.loadUrl("about:blank"); // Evitar de renderizar página de sem rede genérica do android
                 Intent errorIntent = new Intent(getApplicationContext(), ErrorActivity.class);
                 startActivity(errorIntent);
                 finish();
