@@ -73,10 +73,14 @@ public class MainActivity extends AppCompatActivity {
                 // Classe com injeção do JS para estética usando Thread do Java
                 JavaScriptInjectionService javaScriptInjectionService = new JavaScriptInjectionService();
 
-                javaScriptInjectionService.pseudoDarkTheme(view);
-                javaScriptInjectionService.beautyTools(view);
-                javaScriptInjectionService.removeElement(view);
-                javaScriptInjectionService.carterinhaAluno(view);
+                // This method allows you to post a Runnable object to the main UI thread's message queue,
+                // ensuring that the code inside the Runnable is executed on the main UI thread.
+                webView.post(() -> {
+                    javaScriptInjectionService.pseudoDarkTheme(view);
+                    javaScriptInjectionService.beautyTools(view);
+                    javaScriptInjectionService.removeElement(view);
+                    javaScriptInjectionService.carterinhaAluno(view);
+                });
 
                 // Aplica um pouco de delay para que minimize o efeito gráfico da injeção de tema via JS
                 try {
@@ -92,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
                 NetworkInfo activeNetwork = connectivityManager.getActiveNetworkInfo();
                 boolean isConnected = activeNetwork != null && activeNetwork.isConnectedOrConnecting();
 
-                if(isConnected)
+                if (isConnected)
                     view.setVisibility(View.VISIBLE);
             }
 
