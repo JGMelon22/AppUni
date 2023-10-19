@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
 
                 // Aplica um pouco de delay para que minimize o efeito gráfico da injeção de tema via JS
                 try {
-                    Thread.sleep(100);
+                    Thread.sleep(120);
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 }

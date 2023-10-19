@@ -70,7 +70,18 @@ public class JavaScriptInjectionService {
         webView.loadUrl("javascript:(function() {document.querySelector('[class=\"text-muted paragraph-color\"]').style.color = \"#FFFF\"})()");
 
         // Muda a logo da tela de login
-        webView.loadUrl("javascript:(function() {document.querySelector('[class=\"header\"]').outerHTML = '<img src=\"https://i.imgur.com/SzxKhmN.jpeg\" alt=\"Image\" style=\"height: auto;\">'})()"); // Funcional
+        // webView.loadUrl("javascript:(function() {document.querySelector('[class=\"header\"]').outerHTML = '<img src=\"https://i.imgur.com/SzxKhmN.jpeg\" alt=\"Image\" style=\"height: auto;\">'})()"); // Funcional
+        // Mais veloz?
+        webView.loadUrl("javascript:(function() { " +
+                "var img = document.createElement('img'); " +
+                "img.src = '/image/Logo-uva-footer.svg'; " +
+                "img.alt = 'Image'; " +
+                "img.style.height = 'auto'; " +
+                "img.style.paddingTop = '20%';" + 
+                "img.style.paddingBottom = '30%';" +
+                "document.querySelector('[class=\"header\"]').outerHTML = img.outerHTML; " +
+                "})()");
+
 
         // Muda a cor do botão de login e sua fonte
         webView.loadUrl("javascript:(function() {document.querySelector('[class=\"button-type-mobile btn-style\"]').style.background = \"#ffd000\"})()");
