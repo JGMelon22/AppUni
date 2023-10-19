@@ -61,9 +61,9 @@ public class JavaScriptInjectionService {
 
     // Estética para mover o banner p/ o canto inferior
     public void beautyTools(@NonNull WebView webView) {
-        webView.loadUrl("javascript:(function() {document.querySelector('[class=\"container-fluid footer-central-page\"]').style.position=\"absolute\"})()");
+        webView.loadUrl("javascript:(function() {document.querySelector('[class=\"container-fluid footer-central-page\"]').style.position=\"relative\"})()");
         webView.loadUrl("javascript:(function() {document.querySelector('[class=\"container-fluid footer-central-page\"]').style.bottom=\"0\"})()");
-        webView.loadUrl("javascript:(function() {document.querySelector('[class=\"image-footer\"]').style.position=\"absolute\"})()");
+        webView.loadUrl("javascript:(function() {document.querySelector('[class=\"image-footer\"]').style.position=\"relative\"})()");
         webView.loadUrl("javascript:(function() {document.querySelector('[class=\"image-footer\"]').style.bottom=\"0\"})()");
 
         // Muda a cor da fonte de recuperar senha
