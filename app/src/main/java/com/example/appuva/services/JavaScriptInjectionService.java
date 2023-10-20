@@ -76,7 +76,7 @@ public class JavaScriptInjectionService {
                 "var img = document.createElement('img'); " +
                 "img.src = '/image/Logo-uva-footer.svg'; " +
                 "img.alt = 'Image'; " +
-                "img.style.height = 'auto'; " +
+                "img.style.height = '15%'; " +
                 "img.style.paddingTop = '20%';" + 
                 "img.style.paddingBottom = '30%';" +
                 "document.querySelector('[class=\"header\"]').outerHTML = img.outerHTML; " +
