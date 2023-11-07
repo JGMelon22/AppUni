@@ -38,13 +38,17 @@ public class JavaScriptInjectionService {
 
         // Input de login e senha agora respeitam a cor branca, não mudando para o azul do backround
         webView.loadUrl("javascript:(function() {document.getElementById(\"LoginEntrada_login\").style.backgroundColor = \"#ffffff\"})()");
+        webView.loadUrl("javascript:(function() {document.getElementById('LoginEntrada_login').style.color = '#000000';})()");
+
         webView.loadUrl("-javascript:(function() {document.getElementById(\"LoginEntrada_senha\").style.backgroundColor = \"#ffffff\"})()");
+        webView.loadUrl("javascript:(function() {document.getElementById('LoginEntrada_senha').style.color = '#000000';})()");
 
         // Input de login e data nascimento na tela de recuperação de senha com fundo branco
         webView.loadUrl("javascript:(function() { " +
                 "var elements = document.getElementsByName('cpf'); " +
                 "for (var i = 0; i < elements.length; i++) { " +
                 "    elements[i].style.backgroundColor = '#ffffff'; " +
+                "    elements[i].style.color = '#000000'; " +
                 "} " +
                 "})()");
 
@@ -52,6 +56,7 @@ public class JavaScriptInjectionService {
                 "var elements = document.getElementsByName('dtNascimento'); " +
                 "for (var i = 0; i < elements.length; i++) { " +
                 "    elements[i].style.backgroundColor = '#ffffff'; " +
+                "    elements[i].style.color = '#000000'; " +
                 "} " +
                 "})()");
 
@@ -67,21 +72,10 @@ public class JavaScriptInjectionService {
         webView.loadUrl("javascript:(function() {document.querySelector('[class=\"image-footer\"]').style.bottom=\"0\"})()");
 
         // Muda a cor da fonte de recuperar senha
-        webView.loadUrl("javascript:(function() {document.querySelector('[class=\"text-muted paragraph-color\"]').style.color = \"#FFFF\"})()");
+        webView.loadUrl("javascript:(function() {document.querySelector('[class=\"paragraph-color\"]').style.color = \"#FFFF\"})()");
 
         // Muda a logo da tela de login
-        // webView.loadUrl("javascript:(function() {document.querySelector('[class=\"header\"]').outerHTML = '<img src=\"https://i.imgur.com/SzxKhmN.jpeg\" alt=\"Image\" style=\"height: auto;\">'})()"); // Funcional
-        // Mais veloz?
-        webView.loadUrl("javascript:(function() { " +
-                "var img = document.createElement('img'); " +
-                "img.src = '/image/Logo-uva-footer.svg'; " +
-                "img.alt = 'Image'; " +
-                "img.style.height = '15%'; " +
-                "img.style.paddingTop = '20%';" + 
-                "img.style.paddingBottom = '30%';" +
-                "document.querySelector('[class=\"header\"]').outerHTML = img.outerHTML; " +
-                "})()");
-
+        webView.loadUrl("javascript:(function() {document.querySelector('[class=\"header\"]').outerHTML = '<img src=\"https://i.imgur.com/SzxKhmN.jpeg\" alt=\"Image\" style=\"height: auto;\">'})()"); // Funcional
 
         // Muda a cor do botão de login e sua fonte
         webView.loadUrl("javascript:(function() {document.querySelector('[class=\"button-type-mobile btn-style\"]').style.background = \"#ffd000\"})()");
