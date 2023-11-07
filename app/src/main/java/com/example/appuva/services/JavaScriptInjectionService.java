@@ -37,10 +37,10 @@ public class JavaScriptInjectionService {
 
         // Input de login e senha agora respeitam a cor branca, não mudando para o azul do backround
         webView.loadUrl("javascript:(function() {document.getElementById(\"LoginEntrada_login\").style.backgroundColor = \"#ffffff\"})()");
-        webView.loadUrl("javascript:(function() {document.getElementById('LoginEntrada_login').style.color = '#000000';})()");
+        webView.loadUrl("javascript:(function() {document.getElementById(\"LoginEntrada_login\").style.color = \"#000000\";})()");
 
-        webView.loadUrl("-javascript:(function() {document.getElementById(\"LoginEntrada_senha\").style.backgroundColor = \"#ffffff\"})()");
-        webView.loadUrl("javascript:(function() {document.getElementById('LoginEntrada_senha').style.color = '#000000';})()");
+        webView.loadUrl("javascript:(function() {document.getElementById(\"LoginEntrada_senha\").style.backgroundColor = \"#ffffff\"})()");
+        webView.loadUrl("javascript:(function() {document.getElementById(\"LoginEntrada_senha\").style.color = \"#000000\";})()");
 
         // Input de login e data nascimento na tela de recuperação de senha com fundo branco
         webView.loadUrl("javascript:(function() { " +
