@@ -81,11 +81,16 @@ public class JavaScriptInjectionService {
         webView.loadUrl("javascript:(function() {document.querySelector('[class=\"style-inputs color-btn\"]').style.color = \"#014b78\"})()");
     }
 
+    // Avisa ao usuário para considerar em bater um print da carteirinha do aluno
     public void carterinhaAluno(@NonNull WebView webView) {
         String avisoCarterinha = "function avisoCarterinha() { window.alert('Considere tirar um print da carterinha!'); }";
-        String cliqueCarterinha = "document.getElementById('btn_acionar_carterinha').addEventListener('click', avisoCarterinha);";
+        String cliqueCarterinha = "var button = document.getElementById('btn_acionar_carterinha').querySelector('button');" +
+                "if (button) {" +
+                "   button.addEventListener('click', function() { avisoCarterinha(); chamarCarterinha(); });" +
+                "}";
 
         webView.loadUrl("javascript:" + avisoCarterinha);
         webView.loadUrl("javascript:" + cliqueCarterinha);
     }
+
 }
