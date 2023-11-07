@@ -12,12 +12,11 @@ public class JavaScriptInjectionService {
         webView.loadUrl("javascript:(function() {document.querySelector('div.col-sm-1:nth-child(2)').remove()})()");
 
         // Remove botão de reset de senha e de logout
-        webView.loadUrl("javascript:(function() {document.querySelector('[class=\"button-link\"]').remove()})()");
-        webView.loadUrl("javascript:(function() {document.querySelector('[class=\"button-link\"]').remove()})()");
+        webView.loadUrl("javascript:(function() {document.querySelector('[class=\"profile-container-button\"]').remove()})()");
+        webView.loadUrl("javascript:(function() {document.querySelector('[class=\"profile-container-button\"]').remove()})()");
 
-        // Remove o link para o Canvas, visto que no navegador mobile fica ruim de usar e uma div em branco
-        webView.loadUrl("javascript:(function() {document.querySelector('[class=\"d-flex justify-content-center\"]').remove()})()");
-        webView.loadUrl("javascript:(function() {document.querySelector('[class=\"container\"]').remove()})()");
+        // Remove os botões de logout e reset de senha na aba de perfil
+        webView.loadUrl("javascript:(function() {document.querySelector('[class=\"d-flex justify-content-center profile-container-section\"]').remove()})()");
 
         // Desabilita o clique dos botões na div
         webView.evaluateJavascript("const buttons = document.querySelectorAll('.button-info-center');" +
