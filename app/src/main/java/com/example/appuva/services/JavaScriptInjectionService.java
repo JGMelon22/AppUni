@@ -31,7 +31,7 @@ public class JavaScriptInjectionService {
         webView.loadUrl("javascript:(function() {document.querySelector('[class=\"container-menu-central\"]').style.backgroundColor = \"#0f3d56\"})()");
         webView.loadUrl("javascript:(function() {document.body.style.backgroundColor = \"#004b78\"})()");
         webView.loadUrl("javascript:(function() {document.querySelector('[class=\"modal-body d-flex justify-content-start\"]').style.backgroundColor = \"#8297b5\"})()");
-        webView.loadUrl("javascript:(function() {document.getElementById(\"image-logo\").src=\"/image/Logo-uva-footer.svg\"})()");
+        webView.loadUrl("javascript:(function() {document.getElementById(\"image-logo\").src=\"/image/uva/desktop/logo_footer.svg\"})()"); // Logo superior igual a inferior (fonte em branco)
         webView.loadUrl("javascript:(function() {document.getElementById(\"menu-area2\").style.backgroundColor = \"#ebc831\"})()");
         webView.loadUrl("javascript:(function() {document.getElementById(\"styleMenuFerramentas\").style.backgroundColor = \"#ebc831\"})()");
         webView.loadUrl("javascript:(function() {document.querySelector('[class=\"buttonCloseBg\"]').style.backgroundColor = \"#ebc831\"})()");
@@ -66,10 +66,6 @@ public class JavaScriptInjectionService {
 
     // Estética para mover o banner p/ o canto inferior
     public void beautyTools(@NonNull WebView webView) {
-        webView.loadUrl("javascript:(function() {document.querySelector('[class=\"container-fluid footer-central-page\"]').style.position=\"relative\"})()");
-        webView.loadUrl("javascript:(function() {document.querySelector('[class=\"container-fluid footer-central-page\"]').style.bottom=\"0\"})()");
-        webView.loadUrl("javascript:(function() {document.querySelector('[class=\"image-footer\"]').style.position=\"relative\"})()");
-        webView.loadUrl("javascript:(function() {document.querySelector('[class=\"image-footer\"]').style.bottom=\"0\"})()");
 
         // Muda a cor da fonte de recuperar senha
         webView.loadUrl("javascript:(function() {document.querySelector('[class=\"paragraph-color\"]').style.color = \"#FFFF\"})()");
