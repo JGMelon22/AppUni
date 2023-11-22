@@ -84,12 +84,11 @@ public class JavaScriptInjectionService {
     // Avisa ao usuário para considerar em bater um print da carteirinha do aluno
     public void carterinhaAluno(@NonNull WebView webView) {
         String avisoCarterinha = "function avisoCarterinha() { window.alert('Considere tirar um print da carterinha!'); }";
-        String cliqueCarterinha = "var button = document.getElementById('btn_acionar_carterinha').querySelector('button');" +
-                "if (button) {" +
-                "   button.addEventListener('click', function() { avisoCarterinha(); chamarCarterinha(); });" +
-                "}";
+        String botaoCarterinha = "var button = document.getElementById('btn_acionar_carterinha').querySelector('button');";
+        String cliqueCarterinha = "button.onclick = () => {  avisoCarterinha();  chamarCarterinha(); };";
 
         webView.loadUrl("javascript:" + avisoCarterinha);
+        webView.loadUrl("javascript:" + botaoCarterinha);
         webView.loadUrl("javascript:" + cliqueCarterinha);
     }
 
