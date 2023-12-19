@@ -18,6 +18,9 @@ public class JavaScriptInjectionService {
         // Remove os botões de logout e reset de senha na aba de perfil
         webView.loadUrl("javascript:(function() {document.querySelector('[class=\"d-flex justify-content-center profile-container-section\"]').remove()})()");
 
+        // Remove novo botão de reset de senha
+        webView.loadUrl("javascript:(function() {document.querySelector('[class=\"header-icone-trocarSenha\"]').remove()})()");
+
         // Desabilita o clique dos botões na div
         webView.evaluateJavascript("const buttons = document.querySelectorAll('.button-info-center');" +
                 "for (let i = 0; i < buttons.length; i++) {" +
