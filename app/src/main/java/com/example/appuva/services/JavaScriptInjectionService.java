@@ -82,6 +82,9 @@ public class JavaScriptInjectionService {
         // Muda a cor do botão de reset de senha e sua fonte
         webView.loadUrl("javascript:(function() {document.querySelector('[class=\"style-inputs color-btn\"]').style.background = \"#ffd000\"})()");
         webView.loadUrl("javascript:(function() {document.querySelector('[class=\"style-inputs color-btn\"]').style.color = \"#014b78\"})()");
+
+        // Muda cor texto botão entrar e buscar na tela de recuperação de senha
+        webView.loadUrl("javascript:(function() { document.querySelector('.btn-style').style.color = 'white'; })()");
     }
 
     // Avisa ao usuário para considerar em bater um print da carteirinha do aluno
