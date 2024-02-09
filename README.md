@@ -19,7 +19,7 @@ O programa realiza um wrapper do portal do aluno web através do componente WebV
 </p>
 
 <h2>Diagrama de Classe</h2>
-<img src="https://github.com/JGMelon22/AppUni/assets/73988556/c7bbd2bf-c3cc-4147-b6c0-e4f6b734777e" width="713" height="170"/> <span>&nbsp;</span>
+<img src="https://github.com/JGMelon22/AppUni/assets/73988556/99a2efd0-076a-40ec-b885-8d9c2e176760" width="713" height="170"/> <span>&nbsp;</span>
 
 <h4> Colaboradores 👥</h4>
 - <a href="https://github.com/rbrmafort">Robert Mafort 💻<a/>
