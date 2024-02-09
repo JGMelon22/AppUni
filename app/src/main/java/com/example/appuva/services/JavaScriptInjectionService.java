@@ -86,16 +86,4 @@ public class JavaScriptInjectionService {
         // Muda cor texto botão entrar e buscar na tela de recuperação de senha
         webView.loadUrl("javascript:(function() { document.querySelector('.btn-style').style.color = 'white'; })()");
     }
-
-    // Avisa ao usuário para considerar em bater um print da carteirinha do aluno
-    public void carterinhaAluno(@NonNull WebView webView) {
-        String avisoCarterinha = "function avisoCarterinha() { window.alert('Considere tirar um print da carterinha!'); }";
-        String botaoCarterinha = "var button = document.getElementById('btn_acionar_carterinha').querySelector('button');";
-        String cliqueCarterinha = "button.onclick = () => {  avisoCarterinha();  chamarCarterinha(); };";
-
-        webView.loadUrl("javascript:" + avisoCarterinha);
-        webView.loadUrl("javascript:" + botaoCarterinha);
-        webView.loadUrl("javascript:" + cliqueCarterinha);
-    }
-
 }

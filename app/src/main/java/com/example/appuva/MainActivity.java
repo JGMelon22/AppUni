@@ -78,7 +78,6 @@ public class MainActivity extends AppCompatActivity {
                     javaScriptInjectionService.pseudoDarkTheme(view);
                     javaScriptInjectionService.beautyTools(view);
                     javaScriptInjectionService.removeElement(view);
-                    javaScriptInjectionService.carterinhaAluno(view);
                 });
 
                 // Aplica um pouco de delay para que minimize o efeito gráfico da injeção de tema via JS
