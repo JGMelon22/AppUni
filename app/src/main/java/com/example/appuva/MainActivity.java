@@ -90,12 +90,7 @@ public class MainActivity extends AppCompatActivity {
                 progressBar.setVisibility(View.INVISIBLE);
 
                 // Verifica se está conectado a internet
-                ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-                NetworkInfo activeNetwork = connectivityManager.getActiveNetworkInfo();
-                boolean isConnected = activeNetwork != null && activeNetwork.isConnectedOrConnecting();
-
-                if (isConnected)
-                    view.setVisibility(View.VISIBLE);
+               isUserConnected(view);
             }
 
             // Caso o usuário esteja offline, indica que é preciso ter uma conexão de internet ativa
@@ -117,5 +112,14 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onKeyDown(keyCode, event);
+    }
+    public void isUserConnected(View view) {
+        // Instancia o network manager e julga se está offline ou não (evitando a web view offline)
+        ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetwork = connectivityManager.getActiveNetworkInfo();
+        boolean isConnected = activeNetwork != null && activeNetwork.isConnectedOrConnecting();
+
+        if (isConnected)
+            view.setVisibility(View.VISIBLE);
     }
 }
