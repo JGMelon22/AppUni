@@ -16,9 +16,7 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.appuva.services.JavaScriptInjectionService;
 
 public class MainActivity extends AppCompatActivity {
@@ -55,58 +53,72 @@ public class MainActivity extends AppCompatActivity {
         progressBar.setVisibility(View.INVISIBLE);
 
         // Durante o carregamento da página, a progressbar é vista para dar um feedback de loading
-        webView.setWebViewClient(new WebViewClient() {
-
-            @Override
-            public void onPageStarted(WebView view, String url, Bitmap favicon) {
-
-                super.onPageStarted(view, url, favicon);
-                view.setVisibility(View.INVISIBLE);
-                progressBar.setVisibility(View.VISIBLE);
-            }
-
-            // E após carregar, ela é escondida
-            @Override
-            public void onPageFinished(WebView view, String url) {
-
-                // Classe com injeção do JS para estética usando Thread do Java
-                JavaScriptInjectionService javaScriptInjectionService = new JavaScriptInjectionService();
-
-                // This method allows you to post a Runnable object to the main UI thread's message queue,
-                // ensuring that the code inside the Runnable is executed on the main UI thread.
-                webView.post(() -> {
-                    javaScriptInjectionService.pseudoDarkTheme(view);
-                    javaScriptInjectionService.beautyTools(view);
-                    javaScriptInjectionService.removeElement(view);
-                });
-
-                // Aplica um pouco de delay para que minimize o efeito gráfico da injeção de tema via JS
-                try {
-                    Thread.sleep(120);
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
+        webView.setWebViewClient(
+            new WebViewClient() {
+                @Override
+                public void onPageStarted(
+                    WebView view,
+                    String url,
+                    Bitmap favicon
+                ) {
+                    super.onPageStarted(view, url, favicon);
+                    view.setVisibility(View.INVISIBLE);
+                    progressBar.setVisibility(View.VISIBLE);
                 }
 
-                progressBar.setVisibility(View.INVISIBLE);
+                // E após carregar, ela é escondida
+                @Override
+                public void onPageFinished(WebView view, String url) {
+                    // Classe com injeção do JS para estética usando Thread do Java
+                    JavaScriptInjectionService javaScriptInjectionService =
+                        new JavaScriptInjectionService();
 
-                // Verifica se está conectado a internet
-                isUserConnected(view);
-            }
+                    // This method allows you to post a Runnable object to the main UI thread's message queue,
+                    // ensuring that the code inside the Runnable is executed on the main UI thread.
+                    webView.post(() -> {
+                        javaScriptInjectionService.removeElements(view);
+                    });
 
-            // Caso o usuário esteja offline, indica que é preciso ter uma conexão de internet ativa
-            @Override
-            public void onReceivedError(WebView view, WebResourceRequest request, WebResourceError error) {
-                super.onReceivedError(view, request, error);
+                    // Aplica um pouco de delay para que minimize o efeito gráfico da injeção de tema via JS
+                    try {
+                        Thread.sleep(120);
+                    } catch (InterruptedException e) {
+                        throw new RuntimeException(e);
+                    }
 
-                if (error != null && (error.getErrorCode() == WebViewClient.ERROR_HOST_LOOKUP ||
-                        error.getErrorCode() == WebViewClient.ERROR_CONNECT ||
-                        error.getErrorCode() == WebViewClient.ERROR_TIMEOUT)) {
-                    Intent errorIntent = new Intent(getApplicationContext(), ErrorActivity.class);
-                    startActivity(errorIntent);
-                    finish();
+                    progressBar.setVisibility(View.INVISIBLE);
+
+                    // Verifica se está conectado a internet
+                    isUserConnected(view);
+                }
+
+                // Caso o usuário esteja offline, indica que é preciso ter uma conexão de internet ativa
+                @Override
+                public void onReceivedError(
+                    WebView view,
+                    WebResourceRequest request,
+                    WebResourceError error
+                ) {
+                    super.onReceivedError(view, request, error);
+
+                    if (
+                        error != null &&
+                        (error.getErrorCode() ==
+                                WebViewClient.ERROR_HOST_LOOKUP ||
+                            error.getErrorCode() ==
+                            WebViewClient.ERROR_CONNECT ||
+                            error.getErrorCode() == WebViewClient.ERROR_TIMEOUT)
+                    ) {
+                        Intent errorIntent = new Intent(
+                            getApplicationContext(),
+                            ErrorActivity.class
+                        );
+                        startActivity(errorIntent);
+                        finish();
+                    }
                 }
             }
-        });
+        );
     }
 
     // Caso seja possível retornar a página anterior, o botão de retornar terá essa ação
@@ -122,11 +134,14 @@ public class MainActivity extends AppCompatActivity {
 
     public void isUserConnected(View view) {
         // Instancia o network manager e julga se está offline ou não (evitando a web view offline)
-        ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        ConnectivityManager connectivityManager =
+            (ConnectivityManager) getSystemService(
+                Context.CONNECTIVITY_SERVICE
+            );
         NetworkInfo activeNetwork = connectivityManager.getActiveNetworkInfo();
-        boolean isConnected = activeNetwork != null && activeNetwork.isConnectedOrConnecting();
+        boolean isConnected =
+            activeNetwork != null && activeNetwork.isConnectedOrConnecting();
 
-        if (isConnected)
-            view.setVisibility(View.VISIBLE);
+        if (isConnected) view.setVisibility(View.VISIBLE);
     }
 }
