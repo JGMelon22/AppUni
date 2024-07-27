@@ -76,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
                     // This method allows you to post a Runnable object to the main UI thread's message queue,
                     // ensuring that the code inside the Runnable is executed on the main UI thread.
                     webView.post(() -> {
+                        javaScriptInjectionService.applyCustomStyle(view);
                         javaScriptInjectionService.removeElements(view);
                     });
 
