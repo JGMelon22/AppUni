@@ -7,14 +7,13 @@ A criação de um aplicativo mais funcional e que garanta comodidade de acesso p
 
 <h3> Funcionamento </h3>
 O programa realiza um wrapper do portal do aluno web através do componente WebView, similar a um PWA, com pequenas modificações gráficas em tempo de execução para uma melhor experiência de navegação no celular.
-
-</br>
 </br>
 
 <p float="left">
-  <img src="https://github.com/user-attachments/assets/2371ef12-3282-4f80-ab16-6f9cfa254c94" width="200" height="400"/> <span>&nbsp;</span>
-  <img src="https://github.com/user-attachments/assets/3c52e676-66e2-4214-8151-6cca8bb4e795" width="200" height="400"/>  <span>&nbsp;</span>
-  <img src="https://github.com/user-attachments/assets/466ffed3-bcef-4b7e-98e6-e2a657df0449" width="200" height="400"/> <span>&nbsp;</span>
+  <img src="https://github.com/user-attachments/assets/bd44c206-862e-4ba5-9902-1d590ddf5897" width="200" height="400"/> <span>&nbsp;</span>
+  <img src="https://github.com/user-attachments/assets/77134bc9-bdfe-4ff6-aa57-e1458668c335" width="200" height="400"/> <span>&nbsp;</span>
+  <img src="https://github.com/user-attachments/assets/fcf04530-d08f-48f6-8bf8-b101de3e8e9d" width="200" height="400"/> <span>&nbsp;</span>
+  <img src="https://github.com/user-attachments/assets/2acd2e16-f937-457a-abdc-97c4a13cef6f" width="200" height="400"/> <span>&nbsp;</span>
   <img src="https://user-images.githubusercontent.com/73988556/227794320-6699be1a-aa2c-4a98-a248-1fb9e94d9efe.jpeg" width="200" height="400"/>
 </p>
 
