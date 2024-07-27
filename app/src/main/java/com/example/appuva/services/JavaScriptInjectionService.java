@@ -18,7 +18,12 @@ public class JavaScriptInjectionService {
 
         // Tag em branco referente ao "Esqueci a senha"
         webView.loadUrl(
-            "javascript:(function() {document.querySelector('a[href=\"EsqueciSenhaMobile\"]').style.color = 'White'})()"
+            "javascript:(function() {document.querySelector('a[href=\"/EsqueciSenhaMobile\"]').style.color = 'White'})()"
+        );
+
+        // Texto de recuperação de senha em branco
+        webView.loadUrl(
+                "javascript:(function() {Array.from(document.querySelectorAll('h1')).find(h1 => h1.textContent.trim() === 'Recuperação de Senha')?.style.setProperty('color', 'white');})()"
         );
 
         // Botão de entrar e recuperar em amarelo
